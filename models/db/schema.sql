@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS feelings_db;
+
+CREATE DATABASE feelings_db;
