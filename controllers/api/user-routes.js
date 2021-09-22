@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Status } = require('../../models');
+const { User, Status, Department } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -22,7 +22,12 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: Status,
-                attributes: ['id', 'created_at']
+                attributes: ['id', 'emoji', 'diary', 'created_at'],
+                order: [['created_at', 'DESC']],
+            },
+            {
+                model: Department,
+                attributes: ['name']
             }
         ]
     })
@@ -41,14 +46,17 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     User.create({
-        // username: req.body.username,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        department: req.body.department
     })
         .then(dbUserData => {
             // req.session.save(() => {
             // req.session.user_id = dbUserData.id;
-            // req.session.username = dbUserData.username;
+            // req.session.email = dbUserData.email;
+            // req.session.department = dbUserData.department;
             // req.session.loggedIn = true;
 
             res.json(dbUserData);
@@ -61,7 +69,6 @@ router.post('/', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-    // expects {email: 'lernantino@gmail.com', password: 'password1234'}
     User.findOne({
         where: {
             email: req.body.email
@@ -74,35 +81,35 @@ router.post('/login', (req, res) => {
 
         // const validPassword = dbUserData.checkPassword(req.body.password);
 
-        if (!validPassword) {
-            res.status(400).json({ message: 'Incorrect password!' });
-            return;
-        }
+        // if (!validPassword) {
+        //     res.status(400).json({ message: 'Incorrect password!' });
+        //     return;
+        // }
 
         // req.session.save(() => {
-        //     req.session.user_id = dbUserData.id;
-        //     req.session.username = dbUserData.username;
-        //     req.session.loggedIn = true;
+        // req.session.user_id = dbUserData.id;
+        // req.session.email = dbUserData.email;
+        // req.session.department = dbUserData.department;
+        // req.session.loggedIn = true;
 
         res.json({ user: dbUserData, message: 'You are now logged in!' });
         // });
     });
 });
 
-router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
-        req.session.destroy(() => {
-            res.status(204).end();
-        });
-    }
-    else {
-        res.status(404).end();
-    }
-});
+// will activate once req.session is set up
+// router.post('/logout', (req, res) => {
+//     if (req.session.loggedIn) {
+//         req.session.destroy(() => {
+//             res.status(204).end();
+//         });
+//     }
+//     else {
+//         res.status(404).end();
+//     }
+// });
 
 router.put('/:id', (req, res) => {
-    // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
-
     // pass in req.body instead to only update what's passed through
     User.update(req.body, {
         individualHooks: true,
