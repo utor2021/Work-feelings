@@ -22,7 +22,8 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: Status,
-                attributes: ['id', 'emoji', 'diary', 'created_at']
+                attributes: ['id', 'emoji', 'diary', 'created_at'],
+                order: [['created_at', 'DESC']],
             },
             {
                 model: Department,
