@@ -1,14 +1,9 @@
 <div class="jumbotron bg-light">
-            <h1 class="display-4">Heres how you have been feeling</h1>
+            <h1 class="display-3 text-center">How are you feeling today?</h1>
             <div class="container mt-4">
                 <div class="row">
                     <!--{{#each Emoji (partials?)}}-->
-                    <div class="col-sm"><a href="#"><img class="rounded mx-auto d-block" src="./emojis/happyCapture.PNG"><p class="text-center text-dark">Happy</p></a>
-                    <br>
-                    <!--{{#if status}}
-                    <p class="text-center">{{statusAmount}}</p>
-                    {{/if}}-->
-                    </div>
+                    <div class="col-sm"><a href="#"><img class="rounded mx-auto d-block" src="./emojis/happyCapture.PNG"><p class="text-center text-dark">Happy</p></a></div>
                     <div class="col-sm"><a href="#"><img class="rounded mx-auto d-block" src="./emojis/neutralCapture.PNG"><p class="text-center text-dark">Neutral</p></a></div>
                     <div class="col-sm"><a href="#"><img class="rounded mx-auto d-block" src="./emojis/sadCapture.PNG"><p class="text-center text-dark">Sad</p></a></div>
                     <div class="col-sm"><a href="#"><img class="rounded mx-auto d-block" src="./emojis/verysadCapture.PNG"><p class="text-center text-dark">Very Sad</p></a></div>
@@ -17,5 +12,10 @@
                     <!--{{/each}}-->
                 </div>
                 <br>
+                <div class="form-group mt-4">
+                    <label for="diary">Leave a journal entry below!</label>
+                    <textarea class="form-control" id="diary" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-warning" id="statusSubmit">Submit</button>
             </div>
         </div>
