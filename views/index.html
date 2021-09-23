@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Work Feelings Home</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../public/stylesheets/style.css">
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 </head>
 <body>
-    <main role="main" class="">
-    
-    
+    <wrapper>
+        <!-- navbar part of main.handlebars -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
             <a class="navbar-brand text-warning" href="index.html"><img src="" width="30" height="30" class="d-inline-block align-top" alt=""> 
@@ -25,7 +24,7 @@
                 <ul class="navbar-nav mx-auto">
                     <li class="navbar-item text-warning">
                         <a class="text-warning" href="index.html">
-                            <h5>Work Feelings</h5>
+                            <h5>Work Feelings</h5> <!-- workfeelings currently disappears on smaller screen sizes (bug)-->
                         </a>
                     </li>
                 </ul>
@@ -39,10 +38,7 @@
                     <li class="nav-item" href="tview.html">
                         <a class="nav-link text-warning" href="tview.html">View Your Team</a>
                     </li>
-
-                    <!-- login/logout button to utilize handlebars-->
-
-                    <li class="nav-item" href="tview.html">
+                    <li class="nav-item" href="">
                         <a id="login" class="nav-link text-warning" href=""></a>
                     </li>
                 </ul>
@@ -50,6 +46,9 @@
             </div>
 
         </nav>
+        <main>
+
+        <!--{{body}}-->
         <div class="jumbotron bg-light">
             <h1 class="display-4">Welcome to Work Feelings!™</h1>
             <p class="lead">Our application is designed to help you better understand how you are feeling day-to-day, and facilitate compassion and empathy within teams and departments!</p>
@@ -60,6 +59,9 @@
             <a class="btn btn-primary btn-lg bg-warning text-dark" href="#" role="button">Check in</a>
             </p>
         </div>
+        </main>
+        <!--{{/body}}-->
+        
         <footer class="footer bg-dark">
             <div class="container">
                 <div class="row">
@@ -70,7 +72,7 @@
                         <a class="text-warning" href="#">Company Home Page</a>
                     </div>
                     <div class="col-4 text-right text-warning">
-                        Contact Us: <a class="text-danger" href="mailto:utor2021@gmail.com">utor2021@gmail.com</a>
+                        Contact Us: <a class="text-danger" href="mailto:utor2021@gmail.com">utor2021@gmail.com</a> <!-- email not responsive for smaller screens -->
                     </div>
                 </div>
             </div>
@@ -97,7 +99,7 @@
                 document.getElementById("login").innerHTML += data;
             };
         </script>
-    </main>
+    </wrapper>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
