@@ -14,10 +14,13 @@ Status.init(
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      foreignkey: true
+      references: {
+        model: 'user',
+        key: 'id'
+      }
     },
     diary: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
       validate: {
         len: [1]
@@ -30,17 +33,19 @@ Status.init(
         len: [1]
       }
 
-    },
-    // date:{
-    //   type: DataTypes.DATE,
-    //   allowNull: false
-    // },
+    }
+  },
+  // date:{
+  //   type: DataTypes.DATE,
+  //   allowNull: false
+  // },
+  {
     sequelize,
     timestamps: true,
     freezeTableName: true,
-    underscored: false,
+    underscored: true,
     modelName: 'status'
   }
-)
+);
 
 module.exports = Status;
