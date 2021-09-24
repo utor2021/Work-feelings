@@ -1,26 +1,26 @@
 
-const User = require('./user');
-const Department = require('./department');
-const Status = require('./status');
+const User = require('./User');
+const Department = require('./Department');
+const Status = require('./Status');
 
 
-User.belongsTo(Department,{
+User.belongsTo(Department, {
   foreignKey: 'department_id'
 });
 
-Department.hasMany(User,{
-  foreignKey: 'user_id'
-}); 
-
-User.hasMany(Status,{
-  foreignKey: 'status_id'
+Department.hasMany(User, {
+  foreignKey: 'department_id'
 });
 
-Status.belongsTo(User,{
+User.hasMany(Status, {
+  foreignKey: 'user_id'
+});
+
+Status.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
 
 module.exports = {
-  User,Department,Status
+  User, Department, Status
 };

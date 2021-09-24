@@ -50,7 +50,7 @@ router.post('/', (req, res) => {
         password: req.body.password,
         first_name: req.body.first_name,
         last_name: req.body.last_name,
-        department: req.body.department
+        department_id: req.body.department_id
     })
         .then(dbUserData => {
             // req.session.save(() => {

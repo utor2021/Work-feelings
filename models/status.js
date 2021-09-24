@@ -1,45 +1,51 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+class Status extends Model { }
 
 Status.init(
   {
     id: {
       type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
     },
-      user_id:{
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        foreignkey: true
-      },
-      diary: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [1]
-        }
-      },
-      emoji: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [1]
-      } 
-      
-      },
-      // date:{
-      //   type: DataTypes.DATE,
-      //   allowNull: false
-      // },
-      sequelize,
-      timestamps: true,
-      freezeTableName: true,
-      underscored: false,
-      modelName: 'status'
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    },
+    diary: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    emoji: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+
     }
-  )
+  },
+  // date:{
+  //   type: DataTypes.DATE,
+  //   allowNull: false
+  // },
+  {
+    sequelize,
+    timestamps: true,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'status'
+  }
+);
 
 module.exports = Status;

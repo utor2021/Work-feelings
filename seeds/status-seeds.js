@@ -4,17 +4,17 @@ const { Status } = require('../models');
 const statusdata = [
     {
         emoji: 'happy',
-        diary: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"',
+        diary: 'I feel happy today"',
         user_id: 1
     },
     {
         emoji: 'sad',
-        diary: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.',
+        diary: 'I feel sad today',
         user_id: 2
     },
     {
         emoji: 'happy',
-        diary: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. ',
+        diary: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem',
         user_id: 3
     },
     {
@@ -51,12 +51,7 @@ const statusdata = [
         emoji: 'sad',
         diary: 'Elementum tempus egestas sed sed risus pretium quandumien eget mi.',
         user_id: 10
-    },
-    {
-        emoji: 'angry',
-        diary: 'Sed at dictum diam, id convallis lacus. Maecenas vel nibh ex. Pellentesque rhoncus arcu non accumsan sollicitudin. Sed in purus consectetur, rutrum velit at, imperdiet metus. Ut aliquam diam eget porttitor sodales. Mauris nec tempor enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in erat et augue tristique consequat viverra lacinia diam. Cras lobortis eget dui a ornare. Sed vitae nisi lectus. Pellentesque semper tellus vitae tellus tincidunt, vitae auctor urna blandit. Sed feugiat nibh eget nisl molestie, vitae vehicula justo tempor. Praesent rutrum tincidunt enim, eu auctor mauris congue a. Integer ornare vel lorem ut pharetra.',
-        user_id: 11
-    },
+    }
 ];
 
 const seedStatus = () => Status.bulkCreate(statusdata);

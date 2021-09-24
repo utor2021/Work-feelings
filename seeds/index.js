@@ -7,15 +7,15 @@ const sequelize = require('../config/connection');
 const seedAll = async () => {
     await sequelize.sync({ force: true });
     console.log('--------------');
-    
+
     await seedDepartments();
-    console.log('--------------');
-    
+    console.log('finished seeding departments');
+
     await seedUsers();
-    console.log('--------------');
+    console.log('finished seeding users');
 
     await seedStatus();
-    console.log('--------------');
+    console.log('finished seeding status');
 
 
     process.exit(0);
