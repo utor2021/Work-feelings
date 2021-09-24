@@ -32,17 +32,15 @@ router.get('/:id', (req, res) => {
             {
                 model: User,
                 attributes: ['first_name', 'last_name'],
-                include: [
-                    {
-                        model: status,
-                        attributes: [
-                            'id',
-                            'emoji',
-                            'diary',
-                            'created_at',],
-                        order: [['created_at', 'DESC']],
-                    }
-                ]
+                include: {
+                    model: Status,
+                    attributes: [
+                        'id',
+                        'emoji',
+                        'diary',
+                        'created_at',],
+                    order: [['created_at', 'DESC']]
+                }
             }
         ]
     })
