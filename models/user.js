@@ -45,7 +45,10 @@ User.init(
     department_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      foreignkey: true,
+      references: {
+        model: 'department',
+        key: 'id'
+      }
     }
   },
   {
