@@ -6,29 +6,14 @@ const { Department, User, Status } = require('../models');
 
 
 router.get('/', (req, res) => {
-    res.render('checkin', {title: 'Check In!', loggedIn: true });
+    res.render('checkin', { title: 'Check In!', loggedIn: true });
     // res.render('dashboard', {loggedIn: true });
 });
 
 router.get('/dashboard', (req, res) => {
-    res.render('dashboard', {title: 'Dashboard', loggedIn: true });
-    // res.render('dashboard', {loggedIn: true });
-});
-
-router.get('/tview', (req, res) => {
-    res.render('tview', {title: 'View Your Team', loggedIn: true });
-    // res.render('dashboard', {loggedIn: true });
-});
-
-
-
-
-
-router.get('/myentires', (req, res) => {
     Status.findAll({
         where: {
-            user_id: req.body.id
-            // user_id: req.session.user_id
+            user_id: req.session.user_id
         },
         attributes: [
             'id',
@@ -51,60 +36,78 @@ router.get('/myentires', (req, res) => {
         ]
     })
         .then(dbStatusData => {
-             // serialize data before passing to template
-             const status = dbStatusData.map(status => status.get({ plain: true }));
-            //  res.render('view-my-entries', { status, loggedIn: true });
-             res.render('view-my-entries', { status});
+            // serialize data before passing to template
+            const status = dbStatusData.map(status => status.get({ plain: true }));
+            res.render('dashboard', { status, title: 'Dashboard', loggedIn: true });
         })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
-})
+
+});
+
+// router.get('/tview', (req, res) => {
+//     Department.findOne({
+//         where: {
+//             id: req.session.department_id
+//         },
+//         attributes: [
+//             'id',
+//             'name'
+//         ],
+//         include: [
+//             {
+//                 model: User,
+//                 attributes: ['first_name', 'last_name'],
+//                 include: [
+//                     {
+//                         model: Status,
+//                         attributes: [
+//                             'id',
+//                             'emoji',
+//                             'diary',
+//                             'created_at',],
+//                         order: [['created_at', 'DESC']],
+//                     }
+//                 ]
+//             }
+//         ]
+//     })
+//         .then(dbDepartmentData => {
+//             // serialize data before passing to template
+//             const department = dbDepartmentData.map(status => status.get({ plain: true }));
+//             res.render('tview', { department, title: 'View Your Team', loggedIn: true });
+//         })
+//         .catch(err => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+// });
 
 
-router.get('/mydepartment', (req, res) => {
-    Department.findOne({
-        where: {
-            // name: req.session.department
-            name: req.body.department
-        },
-        attributes: [
-            'id',
-            'name'
-        ],
-        include: [
-            {
-                model: User,
-                attributes: ['first_name', 'last_name'],
-                include: [
-                    {
-                        model: status,
-                        attributes: [
-                            'id',
-                            'emoji',
-                            'diary',
-                            'created_at',],
-                        order: [['created_at', 'DESC']],
-                    }
-                ]
-            }
-        ]
+router.get('/tview', (req, res) => {
+    User.findAll({
+        attributes: { exclude: ['password'] },
+        where: { department_id: req.session.department_id },
+        include: {
+            model: Status,
+            attributes: [
+                'id',
+                'emoji',
+                'diary',
+                'created_at',],
+            order: [['created_at', 'DESC']],
+        }
     })
-        .then(dbDepartmentData => {
-             // serialize data before passing to template
-             const department = dbDepartmentData.map(status => status.get({ plain: true }));
-            //  res.render('view-my-entries', { status, loggedIn: true });
-             res.render('view-my-department', { department});
+        .then(dbUserData => {
+            // serialize data before passing to template
+            const users = dbUserData.map(user => user.get({ plain: true }));
+            res.render('tview', { users, title: 'View Your Team', loggedIn: true });
         })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
-})
-
-
-
-
-
+});
 module.exports = router;
