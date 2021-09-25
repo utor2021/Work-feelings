@@ -13,10 +13,10 @@ router.get('/', (req, res) => {
 
 //redirect to dashboard page if logged in, otherwise render login page
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/dashboard');
-        return;
-    }
+    // if (req.session.loggedIn) {
+    //     res.redirect('/dashboard');
+    //     return;
+    // }
     res.render('login');
 });
 
