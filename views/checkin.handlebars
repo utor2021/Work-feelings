@@ -1,12 +1,15 @@
 <div class="jumbotron bg-light">
-            <h1 class="display-3 text-center">How are you feeling today?</h1>
-            <div class="container mt-4">
-                {{> emoji}}                
-                <br>
-                <div class="form-group mt-4">
-                    <label for="diary">Leave a journal entry below!</label>
-                    <textarea class="form-control" id="diary" rows="4"></textarea>
-                </div>
-                <button type="submit" class="btn btn-warning" id="statusSubmit">Submit</button>
+    <h1 class="display-3 text-center">How are you feeling today?</h1>
+    <form class="new-post-form" action="">
+        <div class="container mt-4">
+            {{> emoji}}
+            <br>
+            <div class="form-group mt-4">
+                <label for="diary">Leave a journal entry below!</label>
+                <textarea class="form-control" name="diary" rows="4"></textarea>
             </div>
+            <button type="submit" class="btn btn-warning" id="statusSubmit">Submit</button>
         </div>
+</div>
+</form>
+<script src="/javascript/add-status.js"></script>

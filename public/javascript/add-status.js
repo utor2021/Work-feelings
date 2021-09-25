@@ -1,9 +1,24 @@
+
 async function newFormHandler(event) {
     event.preventDefault();
+    let emoji;
+    console.log('event', event)
+    $(function () {
+        $(".selectable").selectable({
+            selected: function (event, ui) {
 
-    // const title = document.querySelector('input[name="post-title"]').value;
+                $(".selectable img").each(function (index) {
+                    if ($(this).hasClass("ui-selected")) {
+                        emoji = $(this).attr("id");
+                    }
+                });
+            }
+        });
+    });
+
+    const diary = document.querySelector('textarea[name="diary"]').value.trim();
     // const post_url = document.querySelector('input[name="post-url"]').value;
-
+console.log('emoji', emoji)
     const response = await fetch(`/api/status`, {
         method: 'POST',
         body: JSON.stringify({
