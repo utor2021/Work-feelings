@@ -1,8 +1,19 @@
 <div class="jumbotron bg-light">
-            <h1 class="display-4">Heres how you have been feeling</h1>
-            <div class="container mt-4">
-                    {{> emoji}}
-                <br>
-                        <!--add colx6 including self status totals-->
+    <h1 class="display-4">Heres how you have been feeling</h1>
+    <div class="container mt-4">
+            {{> emoji}}
+        <br>
+        <div class="container">
+            <div class="row">
+                <!--emojiData, emoji, emojiCount variables for query to count emojis-->
             </div>
         </div>
+                <!--add colx6 including self status totals-->
+                
+                {{#each status}}
+                <div class="row">
+                    {{created_at}} <br> {{diary}} <br>
+                </div>
+                {{/each}}
+    </div>
+</div>
