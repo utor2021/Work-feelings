@@ -1,8 +1,31 @@
 <div class="jumbotron bg-light">
-            <h1 class="display-4">Heres how you have been feeling</h1>
-            <div class="container mt-4">
-                    {{> emoji}}
-                <br>
-                        <!--add colx6 including self status totals-->
+    <h1 class="display-4 text-center">Heres how you have been feeling</h1>
+    <div class="container mt-4">
+        <br>
+        <div class="container">
+            <div class="row">
+                {{#each emojiData}}
+                <div class="col-sm text-center">
+                    <img class="rounded mx-auto d-block" src="/images/emojis/{{emoji}}Capture.PNG">
+                    {{emoji}} <br> {{emojiCount}}
+                </div>
+                {{/each}}
             </div>
         </div>
+            <div class="row">
+                <div class="col-sm">
+                    <!--graph data?-->
+                </div>
+                <div class="col-sm">
+            {{#each status}}
+                <div class="row">
+                    <h5 class=>{{created_at}}</h5>
+                </div>
+                <div class="row mt-auto">
+                    <p>{{diary}}</p>
+                </div>
+            {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

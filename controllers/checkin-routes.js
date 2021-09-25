@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// const sequelize = require('../config/connection');
+const sequelize = require('../config/connection');
 const { Department, User, Status } = require('../models');
 
 // const withAuth = require('../utils/auth');
@@ -38,7 +38,25 @@ router.get('/dashboard', (req, res) => {
         .then(dbStatusData => {
             // serialize data before passing to template
             const status = dbStatusData.map(status => status.get({ plain: true }));
-            res.render('dashboard', { status, title: 'Dashboard', loggedIn: true });
+            Status.findAll({
+                where: {
+                    user_id: req.session.user_id
+                },
+                attributes: [
+                    'emoji',
+                    [sequelize.fn('count', 'emoji'), 'emojiCount']
+                ],
+                group: ['emoji']
+            })
+            .then(dbEmojiData => {
+                const emojiData = dbEmojiData.map(emojiCount => emojiCount.get({ plain: true }));
+                console.log(emojiData);
+                res.render('dashboard', { status, emojiData, title: 'Dashboard', loggedIn: true });
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            });
         })
         .catch(err => {
             console.log(err);
@@ -88,16 +106,16 @@ router.get('/dashboard', (req, res) => {
 
 router.get('/tview', (req, res) => {
     User.findAll({
-        attributes: { exclude: ['password'] },
+        attributes: { exclude: ['password', 'email'] },
         where: { department_id: req.session.department_id },
         include: {
             model: Status,
             attributes: [
                 'id',
                 'emoji',
+                'created_at',
                 'diary',
-                'created_at',],
-            order: [['created_at', 'DESC']],
+            ],
         }
     })
         .then(dbUserData => {
