@@ -53,14 +53,14 @@ router.post('/', (req, res) => {
         department_id: req.body.department_id
     })
         .then(dbUserData => {
-            // req.session.save(() => {
-            // req.session.user_id = dbUserData.id;
-            // req.session.email = dbUserData.email;
-            // req.session.department = dbUserData.department;
-            // req.session.loggedIn = true;
+            req.session.save(() => {
+            req.session.user_id = dbUserData.id;
+            req.session.email = dbUserData.email;
+            req.session.department_id = dbUserData.department_id;
+            req.session.loggedIn = true;
 
             res.json(dbUserData);
-            // });
+            });
         })
         .catch(err => {
             console.log(err);
@@ -79,35 +79,35 @@ router.post('/login', (req, res) => {
             return;
         }
 
-        // const validPassword = dbUserData.checkPassword(req.body.password);
+        const validPassword = dbUserData.checkPassword(req.body.password);
 
-        // if (!validPassword) {
-        //     res.status(400).json({ message: 'Incorrect password!' });
-        //     return;
-        // }
+        if (!validPassword) {
+            res.status(400).json({ message: 'Incorrect password!' });
+            return;
+        }
 
-        // req.session.save(() => {
-        // req.session.user_id = dbUserData.id;
-        // req.session.email = dbUserData.email;
-        // req.session.department = dbUserData.department;
-        // req.session.loggedIn = true;
+        req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.email = dbUserData.email;
+        req.session.department_id = dbUserData.department_id;
+        req.session.loggedIn = true;
 
         res.json({ user: dbUserData, message: 'You are now logged in!' });
-        // });
+        });
     });
 });
 
-// will activate once req.session is set up
-// router.post('/logout', (req, res) => {
-//     if (req.session.loggedIn) {
-//         req.session.destroy(() => {
-//             res.status(204).end();
-//         });
-//     }
-//     else {
-//         res.status(404).end();
-//     }
-// });
+router.post('/logout', (req, res) => {
+    console.log("logged", req.session.loggedIn);
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    }
+    else {
+        res.status(404).end();
+    }
+});
 
 router.put('/:id', (req, res) => {
     // pass in req.body instead to only update what's passed through
