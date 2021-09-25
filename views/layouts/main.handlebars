@@ -29,24 +29,24 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav">
-                    {{#if loggedIn}}
-                    <li class="nav-item" href="main.html">
-                        <a class="nav-link text-warning" href="dashboard.html">Dashboard</a>
+                    {{!--{{#if loggedIn}}--}}
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="/dashboard">Dashboard</a>
                     </li> 
-                    <li class="nav-item" href="dashboard.html">
-                        <a class="nav-link text-warning" href="main.html">Check In!</a>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="/checkin">Check In!</a>
                     </li>
-                    <li class="nav-item" href="tview.html">
-                        <a class="nav-link text-warning" href="tview.html">View Your Team</a>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="/tview">View Your Team</a>
                     </li>
+                    <li class="nav-item">
+                        <a id="logout" class="nav-link text-warning" href="/homepage">Logout</a> <!--logout function-->
+                    </li>
+                    {{!--{{else}}--}}
                     <li class="nav-item" href="">
-                        <a id="logout" class="nav-link text-warning" href="">Logout</a>
+                        <a id="login" class="nav-link text-warning" href="#">Login</a> <!--login page href-->
                     </li>
-                    {{#else}}
-                    <li class="nav-item" href="">
-                        <a id="login" class="nav-link text-warning" href="">Login</a>
-                    </li>
-                    {{/if}}
+                    {{!--{{/if}}--}}
                 </ul>
         
             </div>
