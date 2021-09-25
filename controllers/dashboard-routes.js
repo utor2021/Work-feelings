@@ -6,7 +6,7 @@ const { Department, User, Status } = require('../models');
 
 
 router.get('/', (req, res) => {
-    res.render('dashboard');
+    res.render('dashboard', {title: 'Dashboard'});
     // res.render('dashboard', {loggedIn: true });
 });
 
