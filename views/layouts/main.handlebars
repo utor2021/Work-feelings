@@ -31,20 +31,20 @@
                 <ul class="navbar-nav">
                     {{!--{{#if loggedIn}}--}}
                     <li class="nav-item">
-                        <button class="nav-link text-warning bg-dark" href="/dashboard">Dashboard</button>
+                        <a class="nav-link text-warning bg-dark" href="/checkin/dashboard">Dashboard</a>
                     </li> 
                     <li class="nav-item">
-                        <button class="nav-link text-warning bg-dark" href="/checkin">Check In!</button>
+                        <a class="nav-link text-warning bg-dark" href="/checkin">Check In!</a>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link text-warning bg-dark" href="/tview">View Your Team</button>
+                        <a class="nav-link text-warning bg-dark" href="/checkin/tview">View Your Team</a>
                     </li>
                     <li class="nav-item">
                         <button id="logout" class="nav-link text-warning bg-dark">Logout</button> <!--logout function-->
                     </li>
                     {{!--{{else}}--}}
                     <li class="nav-item">
-                        <button id="login" class="nav-link text-warning bg-dark">Login</button> <!--login page href-->
+                        <a id="login" class="nav-link text-warning bg-dark" href="/login">Login</a> <!--login page href-->
                     </li>
                     {{!--{{/if}}--}}
                 </ul>
