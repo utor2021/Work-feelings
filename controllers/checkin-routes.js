@@ -106,16 +106,16 @@ router.get('/dashboard', (req, res) => {
 
 router.get('/tview', (req, res) => {
     User.findAll({
-        attributes: { exclude: ['password'] },
+        attributes: { exclude: ['password', 'email'] },
         where: { department_id: req.session.department_id },
         include: {
             model: Status,
             attributes: [
                 'id',
                 'emoji',
+                'created_at',
                 'diary',
-                'created_at',],
-            order: [['created_at', 'DESC']],
+            ],
         }
     })
         .then(dbUserData => {
