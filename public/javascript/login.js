@@ -27,11 +27,11 @@ async function signupFormHandler(event) {
 
     const first_name = document.querySelector('#first-name').value.trim();
     const last_name = document.querySelector('#last-name').value.trim();
-    const department_id = document.querySelector('#departments').value;
+    const department_id = document.getElementById('departments').value;
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
 
-    if (username && email && password) {
+    if (email && password) {
         const response = await fetch('/api/users', {
             method: 'post',
             body: JSON.stringify({
@@ -45,7 +45,7 @@ async function signupFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/checkin/');
+            document.location.replace('/checkin');
         } else {
             alert(response.statusText);
         }
