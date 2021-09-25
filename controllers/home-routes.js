@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     //     res.redirect('/dashboard');
     //     return;
     // }
-    res.render('homepage');
+    res.render('homepage', {title: 'Work Feelings Homepage'});
 });
 
 //redirect to dashboard page if logged in, otherwise render login page
@@ -17,7 +17,7 @@ router.get('/login', (req, res) => {
     //     res.redirect('/dashboard');
     //     return;
     // }
-    res.render('login');
+    res.render('login', {title: 'Work Feelings Login'});
 });
 
 module.exports = router;
