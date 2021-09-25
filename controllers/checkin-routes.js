@@ -54,7 +54,7 @@ router.get('/dashboard', (req, res) => {
     res.render('dashboard')
 })
 
-router.get('/viewmyteam', (req, res) => {
+router.get('/tview', (req, res) => {
 
     res.render('tview');
 })
