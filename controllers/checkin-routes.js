@@ -6,22 +6,19 @@ const { Department, User, Status } = require('../models');
 
 
 router.get('/', (req, res) => {
-    res.render('checkin', {title: 'Check In!'});
+    res.render('checkin', {title: 'Check In!', loggedIn: true });
     // res.render('dashboard', {loggedIn: true });
 });
 
 router.get('/dashboard', (req, res) => {
-    res.render('dashboard', {title: 'Dashboard'});
+    res.render('dashboard', {title: 'Dashboard', loggedIn: true });
     // res.render('dashboard', {loggedIn: true });
 });
 
 router.get('/tview', (req, res) => {
-    res.render('tview', {title: 'View Your Team'});
+    res.render('tview', {title: 'View Your Team', loggedIn: true });
     // res.render('dashboard', {loggedIn: true });
 });
-
-
-
 
 
 

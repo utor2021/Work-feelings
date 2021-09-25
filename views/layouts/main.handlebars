@@ -29,7 +29,7 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav">
-                    {{!--{{#if loggedIn}}--}}
+                    {{#if loggedIn}}
                     <li class="nav-item">
                         <a class="nav-link text-warning bg-dark" href="/checkin/dashboard">Dashboard</a>
                     </li> 
@@ -42,11 +42,11 @@
                     <li class="nav-item">
                         <button id="logout" class="nav-link text-warning bg-dark">Logout</button> <!--logout function-->
                     </li>
-                    {{!--{{else}}--}}
+                    {{else}}
                     <li class="nav-item">
                         <a id="login" class="nav-link text-warning bg-dark" href="/login">Login</a> <!--login page href-->
                     </li>
-                    {{!--{{/if}}--}}
+                    {{/if}}
                 </ul>
         
             </div>
