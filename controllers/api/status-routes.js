@@ -76,7 +76,9 @@ router.post('/', (req, res) => {
     Status.create({
         emoji: req.body.emoji,
         diary: req.body.diary,
-        user_id: req.body.user_id
+        // use body for API route testing
+        // user_id: req.body.user_id
+        user_id: req.session.user_id
     })
         .then(dbStatusData => res.json(dbStatusData))
         .catch(err => {

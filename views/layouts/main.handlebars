@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 </head>
+
 <body>
     <wrapper>
         <!-- navbar part of main.handlebars -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
-            <a class="navbar-brand text-warning" href="/"><img src="/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt=""> 
+            <a class="navbar-brand text-warning" href="/"><img src="/images/logo.png" width="30" height="30"
+                    class="d-inline-block align-top" alt="">
                 Home
             </a>
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div id="navbarSupportedContent" class="collapse navbar-collapse">
                 <ul class="navbar-nav mx-auto">
                     <li class="navbar-item text-warning">
                         <a class="text-warning" href="/">
-                            <h5>Work Feelings</h5> <!-- workfeelings currently disappears on smaller screen sizes (bug)-->
+                            <h5>Work Feelings</h5>
+                            <!-- workfeelings currently disappears on smaller screen sizes (bug)-->
                         </a>
                     </li>
                 </ul>
@@ -32,7 +43,7 @@
                     {{#if loggedIn}}
                     <li class="nav-item">
                         <a class="nav-link text-warning bg-dark" href="/checkin/dashboard">Dashboard</a>
-                    </li> 
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link text-warning bg-dark" href="/checkin">Check In!</a>
                     </li>
@@ -40,19 +51,20 @@
                         <a class="nav-link text-warning bg-dark" href="/checkin/tview">View Your Team</a>
                     </li>
                     <li class="nav-item">
-                        <button id="logout" class="nav-link text-warning bg-dark">Logout</button> <!--logout function-->
+                        <button id="logout" class="nav-link text-warning bg-dark">Logout</button>
+                        <!--logout function-->
                     </li>
                     {{else}}
                     <li class="nav-item">
-                        <a id="login" class="nav-link text-warning bg-dark" href="/login">Login</a> <!--login page href-->
+                        <a id="login" class="nav-link text-warning bg-dark" href="/login">Login</a>
+                        <!--login page href-->
                     </li>
                     {{/if}}
                 </ul>
-        
             </div>
         </nav>
         <main>
-        {{{body}}}
+            {{{body}}}
         </main>
         <footer class="footer bg-dark">
             <div class="container">
@@ -64,7 +76,8 @@
                         <a class="text-warning" href="#">Company Home Page</a>
                     </div>
                     <div class="col-4 text-right text-warning">
-                        Contact Us: <a class="text-danger" href="mailto:utor2021@gmail.com">utor2021@gmail.com</a> <!-- email not responsive for smaller screens -->
+                        Contact Us: <a class="text-danger" href="mailto:utor2021@gmail.com">utor2021@gmail.com</a>
+                        <!-- email not responsive for smaller screens -->
                     </div>
                 </div>
             </div>
@@ -74,6 +87,24 @@
     <script src="/javascript/logout.js"></script>
     {{/if}}
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+{{!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> --}}
+{{!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  --}}
+
+
+
+
+{{!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script> --}}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
