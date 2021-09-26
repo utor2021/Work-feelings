@@ -1,13 +1,12 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Department, User, Status } = require('../models');
-
 // const withAuth = require('../utils/auth');
 
 
 router.get('/', (req, res) => {
+    console.log("req.session", req.session.user_id);
     res.render('checkin', { title: 'Check In!', loggedIn: true });
-    // res.render('dashboard', {loggedIn: true });
 });
 
 router.get('/dashboard', (req, res) => {
@@ -105,6 +104,7 @@ router.get('/dashboard', (req, res) => {
 
 
 router.get('/tview', (req, res) => {
+    console.log("id", req.session.user_id);
     User.findAll({
         attributes: { exclude: ['password', 'email'] },
         where: { department_id: req.session.department_id },
@@ -121,7 +121,8 @@ router.get('/tview', (req, res) => {
         .then(dbUserData => {
             // serialize data before passing to template
             const users = dbUserData.map(user => user.get({ plain: true }));
-            res.render('tview', { users, title: 'View Your Team', loggedIn: true });
+            const teams = users.filter(user => user.id != req.session.user_id)
+            res.render('tview', { teams, title: 'View Your Team', loggedIn: true });
         })
         .catch(err => {
             console.log(err);

@@ -1,5 +1,5 @@
 <div class="jumbotron bg-light">
-    <h1 class="display-4 text-center">Heres how you have been feeling</h1>
+    <h1 class="display-4 text-center">Here's how you have been feeling!</h1>
     <div class="container mt-4">
         <br>
         <div class="container">
@@ -19,7 +19,7 @@
                 <div class="col-sm">
             {{#each status}}
                 <div class="row">
-                    <h5 class=>{{created_at}}</h5>
+                    <h5 class=>{{format_date created_at}}</h5>
                 </div>
                 <div class="row mt-auto">
                     <p>{{diary}}</p>
