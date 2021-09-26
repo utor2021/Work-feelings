@@ -1,5 +1,5 @@
 <div class="jumbotron bg-light">
-    <h1 class="display-4 text-center">Heres how your team has been feeling!</h1>
+    <h1 class="display-4 text-center">Here's how your team has been feeling!</h1>
     <div class="container mt-4">
         {{#each users}}
         <div class="row">
@@ -9,7 +9,7 @@
                 <br>{{emoji}}
 
                 <br>
-                {{created_at}}
+                {{format_date created_at}}
                 <br>
                 {{diary}}
                 {{/each}}

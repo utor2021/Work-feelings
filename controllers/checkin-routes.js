@@ -1,13 +1,11 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Department, User, Status } = require('../models');
-
 // const withAuth = require('../utils/auth');
 
 
 router.get('/', (req, res) => {
     res.render('checkin', { title: 'Check In!', loggedIn: true });
-    // res.render('dashboard', {loggedIn: true });
 });
 
 router.get('/dashboard', (req, res) => {
