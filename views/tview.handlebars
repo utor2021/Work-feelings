@@ -1,0 +1,20 @@
+<div class="jumbotron bg-light">
+    <h1 class="display-4 text-center">Here's how your team has been feeling!</h1>
+    <div class="container mt-4">
+        {{#each teams}}
+        <div class="row">
+            <p>
+                {{first_name}} {{last_name}}
+                {{#each statuses}}
+                <br>{{emoji}}
+
+                <br>
+                {{format_date created_at}}
+                <br>
+                {{diary}}
+                {{/each}}
+            </p>
+        </div>
+        {{/each}}
+    </div>
+</div>
