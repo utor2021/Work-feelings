@@ -42,7 +42,6 @@ THEN they can view their answer as part of their dashboard historical entries
 GIVEN dashboard historical entries
 WHEN a user would like to delete or update a entry
 THEN they are able to via a edit/delete button from their dashboard
-
 ```
 
 ## Installation
