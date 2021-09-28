@@ -65,3 +65,15 @@ html {
     background-color: transparent;
   }
 
+.emoji{
+ width:30px;
+ float: left;
+}
+
+.border{
+  padding:20px
+}
+
+.created_at{
+  float:right
+}
