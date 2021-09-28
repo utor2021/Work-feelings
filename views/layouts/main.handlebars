@@ -35,43 +35,43 @@
                     class="d-inline-block align-top" alt="logo">
                     HOME
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navabarResponsive">
+        <button class="navbar-toggler"data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div id="navbarSupportedContent" class="collapse navbar-collapse" >
             <ul class="navbar-nav mx-auto">
                     
                 </ul>
                 {{!-- ul --}}
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ">
                     {{#if loggedIn}}
                     {{!-- li 1 --}}
                     <li class="nav-item">
-                        <a class="nav-link text-warning bg-dark" href="/checkin/dashboard">Dashboard</a>
+                        <a class="nav-link text-warning " href="/checkin/dashboard">Dashboard</a>
                     </li>
                     {{!-- li2 --}}
                     <li class="nav-item">
-                        <a class="nav-link text-warning bg-dark" href="/checkin">Check In!</a>
+                        <a class="nav-link text-warning " href="/checkin">Check In!</a>
                     </li>
                     {{!-- li3 --}}
                     <li class="nav-item">
-                        <a class="nav-link text-warning bg-dark" href="/checkin/tview">View Your Team</a>
+                        <a class="nav-link text-warning " href="/checkin/tview">View Your Team</a>
                     </li>
                     {{!-- li4 --}}
                     <li class="nav-item">
-                        <button id="logout" class="nav-link text-warning bg-dark">Logout</button>
+                        <button id="logout" class="nav-link text-warning bg-dark ">Logout</button>
                         <!--logout function-->
                     </li>
                     {{else}}
                     <li class="nav-item">
-                        <a id="login" class="nav-link text-warning bg-dark" href="/login">Login</a>
+                        <a id="login" class="nav-link text-warning " href="/login">Login</a>
                         <!--login page href-->
                     </li>
                     {{/if}}
                 </ul>
         </div>
     </nav>
-    </div>
+    
     {{!-- END NAV --}}
     {{!-- start landing page --}}
 <main class="home-inner">
