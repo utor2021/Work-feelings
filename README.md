@@ -8,7 +8,7 @@ This project intends to provide employees a safe space to share how they are fee
 
 It is a great way to build trust and feel vulnerable with each other. This app would also enable everyone in an organization to monitor everyone's mental health and provide additional help to those that are currently struggling, whether that’s asking how they are doing to picking up some of their work tasks to meeting up with them to talk.
 
-![alt text](https://github.com/utor2021/Work-feelingsfeature/readme/assets/img/work-feelings.png)
+![alt text](https://github.com/utor2021/Work-feelings/feature/readme/assets/img/work-feelings.png)
 
 ## Table of Contents
 - [Description](#description)
