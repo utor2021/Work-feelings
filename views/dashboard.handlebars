@@ -12,19 +12,20 @@
                 {{/each}}
             </div>
         </div>
-            <div class="row">
-                <div class="col-sm">
-                    <!--graph data?-->
-                </div>
-                <div class="col-sm">
-            {{#each status}}
+        <div class="row">
+            <div class="col-sm">
+                <!--graph data?-->
+            </div>
+            <div class="col-sm">
+                {{#each status}}
                 <div class="row">
                     <h5 class=>{{format_date created_at}}</h5>
                 </div>
                 <div class="row mt-auto">
                     <p>{{diary}}</p>
                 </div>
-            {{/each}}
+                {{!-- {{edit-status}} --}}
+                {{/each}}
             </div>
         </div>
     </div>
