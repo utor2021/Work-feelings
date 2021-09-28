@@ -16,13 +16,17 @@
         <div class="container">
             <div class="row">
                 {{#each status}}
-                <div class="col-sm-12 col-lg-6 border border-dark">
-                    <h5>{{diary}}</h5>
-                    <div>
-                        <img class="emoji" src="/images/emojis/{{emoji}}Capture.PNG">
-                        <h6 class="created_at">{{format_date created_at}}</h6>
+                <form class="edit-post-form">
+                    <div class="col-sm-12 col-lg-6 border border-dark">
+                        <input type="text" value="{{diary}}">
+                        <div>
+                            <img class="emoji" src="/images/emojis/{{emoji}}Capture.PNG">
+                            <h6 class="created_at">{{format_date created_at}}</h6>
+                        </div>
                     </div>
-                </div>
+                    <button type="submit">Save post</button>
+                    <button type="button" class="delete-post-btn">Delete post</button>
+                </form>
                 {{/each}}
             </div>
         </div>
