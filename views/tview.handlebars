@@ -1,20 +1,27 @@
 <div class="jumbotron bg-light">
     <h1 class="display-4 text-center">Here's how your team has been feeling!</h1>
-    <div class="container mt-4">
-        {{#each teams}}
-        <div class="row">
-            <p>
-                {{first_name}} {{last_name}}
-                {{#each statuses}}
-                <br>{{emoji}}
-
-                <br>
-                {{format_date created_at}}
-                <br>
-                {{diary}}
-                {{/each}}
-            </p>
+    {{#each teams}}
+        <div class="container">
+            <div class="row">
+                <h2>{{first_name}} {{last_name}}</h2>
+                    {{#each statuses}}
+                        <div class="container">
+                                <div class="m-1 p-2 border rounded">
+                                    <h6><em>
+                                        {{format_date created_at}}
+                                    </em></h6>
+                                        <img class="rounded mx-auto d-block" src="/images/emojis/{{emoji}}Capture.PNG" width="60" height="60">                        
+                                            <h5 class="text-center">
+                                                I feel {{emoji}}.
+                                            <br>
+                                            <br>  
+                                                {{diary}}
+                                            </h5>
+                                </div>
+                        </div>
+                    {{/each}}
+            </div>
+            <br>
         </div>
-        {{/each}}
-    </div>
+    {{/each}}
 </div>
