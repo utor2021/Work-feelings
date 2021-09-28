@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /*Sticky footer CSS*/
 html {
@@ -5,8 +10,103 @@ html {
     min-height: 100%;
   }
   body {
-    margin-bottom: 60px; /* Margin bottom by footer height */
+    overflow-x: hidden;
+  
+    font-family: 'Lato', sans-serif;
+    color:#505962  ;
   }
+  /* navigation */
+
+  .navbar{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .9rem;
+    margin: 0 auto !important;
+    max-width: 1280PX;
+    letter-spacing: .1rem;
+    background-color: rgba(0,0,0,.6) !important;
+  }
+  .navbar-brand img{
+    height: 2rem;
+  }
+  .navbar-nav li{
+    padding: .7rem;
+
+  }
+ .navbar-dark .navbar-nav .nav-link{
+   color: white;
+   padding-top:.8rem ;
+ }
+ .navbar-dark .navbar-nav .nav-link.active,
+ .navbar-dark .navbar-nav .nav-link:hover{
+   color: #F0A500;
+ }
+ /* land page */
+.brandt{
+  color: #F0A500;
+  text-shadow: .1rem .1rem .5rem white;
+}
+ 
+ .home-inner{
+  background: url(/images/sm2.jpg);
+  height: 100vh;
+  width: auto;
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+ }
+ .caption{
+   width: 100%;
+   max-width: 100%;
+   position: absolute;
+   bottom:38% ;
+   z-index: 1;
+   color:black;
+   text-transform: uppercase;
+
+ }
+ .caption h1{
+   text-align: center;
+   font-size: 25.5vw;
+   color: white;
+   font-size: 3.8rem;
+   font-weight: 500;
+   letter-spacing: .2rem;
+   text-shadow: .1rem .1rem .5rem #F0A500;
+   padding-bottom: 1rem;
+ }
+ .caption p{
+  font-size:2.5vh;
+  display: inline-block;
+  
+ 
+   color: white;
+   text-shadow: .1rem .1rem .2rem black;
+ }
+  /* navbar */
+  .banner{
+    height: 100vh;
+    width: 100%;
+    /* background: url('sm.jpg'); */
+    background-position: center;
+    background-size: cover;
+    /* background-attachment: fixed; */
+  }
+.opc{
+  opacity: 0.8;
+}
+.try{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  /* margin: 20px;  */
+  
+}
+.main-text{
+  color: #F37121;
+  
+}
   .footer {
     position: absolute;
     bottom: 0;
@@ -65,3 +165,5 @@ html {
     background-color: transparent;
   }
 
+/* media queries */
+/* MObile */

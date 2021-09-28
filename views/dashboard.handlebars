@@ -1,30 +1,30 @@
+
 <div class="jumbotron bg-light">
     <h1 class="display-4 text-center">Here's how you have been feeling!</h1>
     <div class="container mt-4">
         <br>
-        <div class="container">
+        <div class="container mb-4 ">
             <div class="row">
                 {{#each emojiData}}
                 <div class="col-sm text-center">
                     <img class="rounded mx-auto d-block" src="/images/emojis/{{emoji}}Capture.PNG">
-                    {{emoji}} <br> {{emojiCount}}
+                    <h2 class="mt-4 fw-bold text-danger"> {{emojiCount}}</h2>
                 </div>
                 {{/each}}
             </div>
         </div>
+
+        <div class="container">
             <div class="row">
-                <div class="col-sm">
-                    <!--graph data?-->
+                {{#each status}}
+                <div class="col-sm-12 col-lg-6 border border-dark">
+                    <h5>{{diary}}</h5>
+                    <div>
+                        <img class="emoji" src="/images/emojis/{{emoji}}Capture.PNG"> 
+                        <h6 class= "created_at">{{format_date created_at}}</h6>
+                    </div>
                 </div>
-                <div class="col-sm">
-            {{#each status}}
-                <div class="row">
-                    <h5 class=>{{format_date created_at}}</h5>
-                </div>
-                <div class="row mt-auto">
-                    <p>{{diary}}</p>
-                </div>
-            {{/each}}
+                {{/each}}
             </div>
         </div>
     </div>

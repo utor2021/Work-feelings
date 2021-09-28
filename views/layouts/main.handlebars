@@ -15,41 +15,49 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <wrapper>
-        <!-- navbar part of main.handlebars -->
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<body data-spy="scroll" data-target = "#navabarResponsive">
+   
+   {{!-- <!------start home ---> --}}
 
-            <a class="navbar-brand text-warning" href="/"><img src="/images/logo.png" width="30" height="30"
-                    class="d-inline-block align-top" alt="">
-                Home
-            </a>
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="navbarSupportedContent" class="collapse navbar-collapse">
-                <ul class="navbar-nav mx-auto">
-                    <li class="navbar-item text-warning">
-                        <a class="text-warning" href="/">
-                            <h5>Work Feelings</h5>
-                            <!-- workfeelings currently disappears on smaller screen sizes (bug)-->
-                        </a>
-                    </li>
+<div id="home"  >
+    {{!-- nAV --}}
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="/">
+            <img src="/images/logo.png" width="30" height="30"
+                    class="d-inline-block align-top" alt="logo">
+                    HOME
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navabarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav mx-auto">
+                    
                 </ul>
-                <ul class="navbar-nav">
+                {{!-- ul --}}
+            <ul class="navbar-nav ml-auto">
                     {{#if loggedIn}}
+                    {{!-- li 1 --}}
                     <li class="nav-item">
                         <a class="nav-link text-warning bg-dark" href="/checkin/dashboard">Dashboard</a>
                     </li>
+                    {{!-- li2 --}}
                     <li class="nav-item">
                         <a class="nav-link text-warning bg-dark" href="/checkin">Check In!</a>
                     </li>
+                    {{!-- li3 --}}
                     <li class="nav-item">
                         <a class="nav-link text-warning bg-dark" href="/checkin/tview">View Your Team</a>
                     </li>
+                    {{!-- li4 --}}
                     <li class="nav-item">
                         <button id="logout" class="nav-link text-warning bg-dark">Logout</button>
                         <!--logout function-->
@@ -61,42 +69,28 @@
                     </li>
                     {{/if}}
                 </ul>
-            </div>
-        </nav>
-        <main>
-            {{{body}}}
-        </main>
-        <footer class="footer bg-dark">
-            <div class="container">
-                <div class="row">
-                    <div class="col-4 text-left">
-                        <a class="text-warning" href="#">Follow us on Social Media</a>
-                    </div>
-                    <div class="col-4 text-center">
-                        <a class="text-warning" href="#">Company Home Page</a>
-                    </div>
-                    <div class="col-4 text-right text-warning">
-                        Contact Us: <a class="text-danger" href="mailto:utor2021@gmail.com">utor2021@gmail.com</a>
-                        <!-- email not responsive for smaller screens -->
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </wrapper>
-    {{#if loggedIn}}
-    <script src="/javascript/logout.js"></script>
-    {{/if}}
+        </div>
+    </nav>
+    </div>
+    {{!-- END NAV --}}
+    {{!-- start landing page --}}
+<main class="home-inner">
+        {{{body}}}
+    </main>
+{{!-- end landing page --}}
+   {{!-- end home --}}
+      
+        
 </body>
 
-{{!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> --}}
-{{!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  --}}
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
 
-
-{{!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script> --}}
+    crossorigin="anonymous"></script> 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
     integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
