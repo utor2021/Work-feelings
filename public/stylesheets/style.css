@@ -202,4 +202,19 @@ html {
   float:right
 }
 
+
+.loim{
+  background: url("/images/sm5.jpg") no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  color: #f5f5f5;
+  
+  
+}
+label{
+  color: #505962;
+}
+.tiptop{
+  margin-top: 13rem;
+}
 /* STYLE ENDS */
