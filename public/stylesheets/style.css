@@ -25,6 +25,7 @@ html {
   }
   p{
     margin: 10px 0;
+    padding: 0 20px;
   }
   .logoW{
     font-size: 2rem;
@@ -46,9 +47,17 @@ html {
   .navbar-brand img{
     height: 2rem;
   }
+  .navbar-nav li{
+    padding: .7rem;
+
+  }
   .navbar-dark .navbar-nav .nav-link{
     color: white;
     padding-top:.8rem ;
+  }
+  .btn-nav{
+    border: 2px solid #F0A500;
+    border-radius: 10px;
   }
   
   .footer {
@@ -78,6 +87,9 @@ html {
     list-style: none;
     text-decoration:none ; 
     padding:2rem ;
+  }
+  .push-down{
+    margin-top: 10rem;
   }
 /* home page styling */
 .hero{

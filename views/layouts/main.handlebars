@@ -42,21 +42,21 @@
                 <ul class="navbar-nav">
                     {{#if loggedIn}}
                     <li class="nav-item">
-                        <a class="nav-link text-warning bg-dark" href="/checkin/dashboard">Dashboard</a>
+                        <a class="nav-link text-warning " href="/checkin/dashboard">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-warning bg-dark" href="/checkin">Check In!</a>
+                        <a class="nav-link text-warning " href="/checkin">Check In!</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-warning " href="/checkin/tview">View Your Team</a>
                     </li>
                     <li class="nav-item">
-                        <button id="logout" class="nav-link text-warning bg-dark">Logout</button>
+                        <button id="logout" class="nav-link text-warning bg-dark btn-nav ">Logout</button>
                         <!--logout function-->
                     </li>
                     {{else}}
                     <li class="nav-item">
-                        <a id="login" class="nav-link text-warning bg-dark" href="/login" style="text-align: center;">Login</a>
+                        <a id="login" class="nav-link text-warning bg-dark btn-nav" href="/login" style="text-align: center;">Login</a>
                         <!--login page href-->
                     </li>
                     {{/if}}
