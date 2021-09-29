@@ -15,9 +15,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,600;1,100;1,200&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -37,7 +34,7 @@
                 <ul class="navbar-nav mx-auto">
                     <li class="navbar-item text-warning">
                        
-                            <h5 class="logoW">Work Feelings</h5>
+                            <h5 class="logoW" style="text-align: center;" >Work Feelings</h5>
                             <!-- workfeelings currently disappears on smaller screen sizes (bug)-->
                        
                     </li>
@@ -45,16 +42,16 @@
                 <ul class="navbar-nav">
                     {{#if loggedIn}}
                     <li class="nav-item">
-                        <a class="nav-link text-warning " href="/checkin/dashboard style="text-align: center;">Dashboard</a>
+                        <a class="nav-link text-warning bg-dark" href="/checkin/dashboard">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-warning " href="/checkin style="text-align: center;">Check In!</a>
+                        <a class="nav-link text-warning bg-dark" href="/checkin">Check In!</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-warning " href="/checkin/tview style="text-align: center;">View Your Team</a>
+                        <a class="nav-link text-warning " href="/checkin/tview">View Your Team</a>
                     </li>
                     <li class="nav-item">
-                        <button id="logout" class="nav-link text-warning bg-dark style="text-align: center;" >Logout</button>
+                        <button id="logout" class="nav-link text-warning bg-dark">Logout</button>
                         <!--logout function-->
                     </li>
                     {{else}}
@@ -83,7 +80,7 @@
                 <a class="" href="https://github.com/utor2021/Work-feelings" target="_blank">Follow us on Social Media</a>
             </li>
             <li><a class="" href="#">Company Home Page</a></li>  
-            <li>Contact Us: <a class="" href="mailto:utor2021@gmail.com" target="_blank">utor2021@gmail.com</a></li>  
+            <li>Contact Us: <a class="" href="mailto:utor2021@gmail.com">utor2021@gmail.com</a></li>  
           </ul>    
       </div>
       </footer>
