@@ -21,8 +21,8 @@
     <wrapper>
         <!-- navbar part of main.handlebars -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-
-            <a class="navbar-brand text-warning" href="/"><img src="/images/logo.png" width="30" height="30"
+            <div class="container">
+             <a class="navbar-brand text-warning" href="/"><img src="/images/logo.png" width="30" height="30"
                     class="d-inline-block align-top" alt="">
                 Home
             </a>
@@ -33,30 +33,30 @@
             <div id="navbarSupportedContent" class="collapse navbar-collapse">
                 <ul class="navbar-nav mx-auto">
                     <li class="navbar-item text-warning">
-                        <a class="text-warning" href="/">
-                            <h5>Work Feelings</h5>
+                       
+                            <h5 class="logoW">Work Feelings</h5>
                             <!-- workfeelings currently disappears on smaller screen sizes (bug)-->
-                        </a>
+                       
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     {{#if loggedIn}}
                     <li class="nav-item">
-                        <a class="nav-link text-warning bg-dark" href="/checkin/dashboard">Dashboard</a>
+                        <a class="nav-link text-warning " href="/checkin/dashboard style="text-align: center;">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-warning bg-dark" href="/checkin">Check In!</a>
+                        <a class="nav-link text-warning " href="/checkin style="text-align: center;">Check In!</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-warning bg-dark" href="/checkin/tview">View Your Team</a>
+                        <a class="nav-link text-warning " href="/checkin/tview style="text-align: center;">View Your Team</a>
                     </li>
                     <li class="nav-item">
-                        <button id="logout" class="nav-link text-warning bg-dark">Logout</button>
+                        <button id="logout" class="nav-link text-warning bg-dark style="text-align: center;" >Logout</button>
                         <!--logout function-->
                     </li>
                     {{else}}
                     <li class="nav-item">
-                        <a id="login" class="nav-link text-warning bg-dark" href="/login">Login</a>
+                        <a id="login" class="nav-link text-warning bg-dark" href="/login" style="text-align: center;">Login</a>
                         <!--login page href-->
                     </li>
                     {{/if}}
@@ -64,24 +64,26 @@
             </div>
         </nav>
         <main>
+
+
+            </div>
+           
             {{{body}}}
         </main>
-        <footer class="footer bg-dark">
-            <div class="container">
-                <div class="row">
-                    <div class="col-4 text-left">
-                        <a class="text-warning" href="#">Follow us on Social Media</a>
-                    </div>
-                    <div class="col-4 text-center">
-                        <a class="text-warning" href="#">Company Home Page</a>
-                    </div>
-                    <div class="col-4 text-right text-warning">
-                        Contact Us: <a class="text-danger" href="mailto:utor2021@gmail.com">utor2021@gmail.com</a>
-                        <!-- email not responsive for smaller screens -->
-                    </div>
-                </div>
-            </div>
-        </footer>
+       <footer class="footer">
+      <div class="footer-right">
+        <p>&copy; 2021 Work Feelings</p>
+      </div>
+      <div >
+          <ul class="flexin">
+            <li>
+                <a class="" href="#">Follow us on Social Media</a>
+            </li>
+            <li><a class="" href="#">Company Home Page</a></li>  
+            <li>Contact Us: <a class="" href="mailto:utor2021@gmail.com">utor2021@gmail.com</a></li>  
+          </ul>    
+      </div>
+      </footer>
     </wrapper>
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>

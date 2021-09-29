@@ -1,19 +1,74 @@
-
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
 /*Sticky footer CSS*/
 html {
     position: relative;
     min-height: 100%;
   }
   body {
-    margin-bottom: 60px; /* Margin bottom by footer height */
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+    color:#505962  ;
+    line-height: 1.6;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(227,227,227,1) 51%, rgba(255,255,255,0.9936415615141956) 99%);
   }
+  h1 h2{
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  p{
+    margin: 10px 0;
+  }
+  .navbar{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .9rem;
+    letter-spacing: .1rem;
+    background-color: rgba(0,0,0,.6) !important;
+  }
+  .container{
+    margin: auto;
+    max-width: 1800px;
+    overflow: auto;
+    padding: 0 20px;
+  }
+  .navbar-brand img{
+    height: 2rem;
+  }
+  .navbar-dark .navbar-nav .nav-link{
+    color: white;
+    padding-top:.8rem ;
+  }
+  
   .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px; /* Set the fixed height of the footer here */
-    line-height: 60px; /* Vertically center the text there */
-    background-color: #f5f5f5;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 20px 30px;
+    background-color: #505962;
+    color: #f5f5f5;
+    font-size: 1.2rem;
+  }
+  .footer a{
+    color: #F0A500;
+  }
+  .flexin {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 0;
+    justify-content: space-around;
+  }
+  .flexin  li  {
+    list-style: none;
+    text-decoration:none ; 
+    padding:2rem ;
   }
 
   #happy-work{
