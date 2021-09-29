@@ -46,7 +46,7 @@ THEN they are able to via a edit/delete button from their dashboard
 
 ## Installation
 
-To install this application, clone the code into your terminal for the respective repository. Then, install npm by entering the command ```npm init```  into the terminal. All dependencies are already present in the ```package.json```file, including bcrypt, connect-session-sequelize, dotenv, express, express-handlebars,express-session, handlebars", mysql2, sequelize, and nodemon.
+To install this application, clone the code into your terminal for the respective repository. Then, install npm by entering the command ```npm install```  into the terminal. All dependencies are already present in the ```package.json```file, including bcrypt, connect-session-sequelize, dotenv, express, express-handlebars,express-session, handlebars", mysql2, sequelize, and nodemon.
 
 Finally, the program can first be seeded by running ```npm seeds``` then run by entering ```npm start``` into the command line.
 
@@ -103,6 +103,6 @@ HTML
 ## Questions
 Our Github username is utor2021, which can be accessed here https://github.com/utor2021/Work-feelings.
 
-This app is deployed through Heroku, which can be accessed here https://Work-feelings.herokuapp.com/
+This app is deployed through Heroku, which can be accessed here https://work-feelings.herokuapp.com/
 
 You can reach us at utor2021@gmail.com with additional questions.
