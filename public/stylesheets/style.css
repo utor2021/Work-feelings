@@ -82,6 +82,7 @@ html {
   .brandt{
     color: #F0A500;
     text-shadow: .1rem .1rem .5rem white;
+    font-weight: bold;
   }
   .wlcm {
     text-align: center;
