@@ -23,69 +23,71 @@
         <!-- navbar part of main.handlebars -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container">
-             <a class="navbar-brand text-warning" href="/"><img src="/images/logo.png" width="30" height="30"
-                    class="d-inline-block align-top" alt="">
-                Home
-            </a>
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="navbarSupportedContent" class="collapse navbar-collapse">
-                <ul class="navbar-nav mx-auto">
-                    <li class="navbar-item text-warning">
-                       
-                            <h5 class="logoW" style="text-align: center;" >Work Feelings</h5>
+                <a class="navbar-brand text-warning" href="/"><img src="/images/logo.png" width="30" height="30"
+                        class="d-inline-block align-top" alt="">
+                    Home
+                </a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="navbar-item text-warning">
+
+                            <h5 class="logoW" style="text-align: center;">Work Feelings</h5>
                             <!-- workfeelings currently disappears on smaller screen sizes (bug)-->
-                       
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    {{#if loggedIn}}
-                    <li class="nav-item">
-                        <a class="nav-link text-warning " href="/checkin/dashboard">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-warning " href="/checkin">Check In!</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-warning " href="/checkin/tview">View Your Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <button id="logout" class="nav-link text-warning bg-dark btn-nav ">Logout</button>
-                        <!--logout function-->
-                    </li>
-                    {{else}}
-                    <li class="nav-item">
-                        <a id="login" class="nav-link text-warning bg-dark btn-nav" href="/login" style="text-align: center;">Login</a>
-                        <!--login page href-->
-                    </li>
-                    {{/if}}
-                </ul>
-                </nav>
-            </div>
-        
+
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        {{#if loggedIn}}
+                        <li class="nav-item">
+                            <a class="nav-link text-warning " href="/checkin/dashboard">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-warning " href="/checkin">Check In!</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-warning " href="/checkin/tview">View Your Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <button id="logout" class="nav-link text-warning bg-dark btn-nav ">Logout</button>
+                            <!--logout function-->
+                        </li>
+                        {{else}}
+                        <li class="nav-item">
+                            <a id="login" class="nav-link text-warning bg-dark btn-nav" href="/login"
+                                style="text-align: center;">Login</a>
+                            <!--login page href-->
+                        </li>
+                        {{/if}}
+                    </ul>
+        </nav>
+        </div>
+
         <main>
 
 
             </div>
-           
+
             {{{body}}}
         </main>
-       <footer class="footer">
-      <div class="footer-right">
-        <p>&copy; 2021 Work Feelings</p>
-      </div>
-      <div >
-          <ul class="flexin">
-            <li>
-                <a class="" href="https://github.com/utor2021/Work-feelings" target="_blank"><span class="awsm"><i class="fab fa-github fa-2x"></i></span> </a>
-            </li>
-            <li><a class="" href="#"> <span class="awsm"><i class="fas fa-home fa-2x"></i></span> </a></li>  
-            <li><a class="" href="mailto:utor2021@gmail.com"><span class="awsm"><i class="fas fa-envelope fa-2x"></i></span> </a></li>  
-          </ul>    
-      </div>
-      </footer>
+        <footer class="footer">
+
+            <div>
+                <ul class="flexin">
+                    <li>
+                        <a class="" href="https://github.com/utor2021/Work-feelings" target="_blank"><span
+                                class="awsm"><i class="fab fa-github fa-2x"></i></span> </a>
+                    </li>
+                    <li><a class="" href="#"> <span class="awsm"><i class="fas fa-home fa-2x"></i></span> </a></li>
+                    <li><a class="" href="mailto:utor2021@gmail.com"><span class="awsm"><i
+                                    class="fas fa-envelope fa-2x"></i></span> </a></li>
+                </ul>
+            </div>
+
+        </footer>
     </wrapper>
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
