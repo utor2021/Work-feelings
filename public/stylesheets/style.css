@@ -14,6 +14,7 @@ html {
     color:#505962  ;
     line-height: 1.6;
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(227,227,227,1) 51%, rgba(255,255,255,0.9936415615141956) 99%);
+    font-family: 'Poppins', sans-serif;
   }
   h1 h2{
     font-weight: 300;
@@ -21,6 +22,10 @@ html {
   }
   p{
     margin: 10px 0;
+  }
+  .logoW{
+    font-size: 2rem;
+    font-weight: bolder;
   }
   .navbar{
     text-transform: uppercase;
@@ -70,6 +75,45 @@ html {
     text-decoration:none ; 
     padding:2rem ;
   }
+/* home page styling */
+.hero{
+  background: url("/images/sm2.jpg") no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  color: #f5f5f5;
+}
+.hero .content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.brandt{
+  color: #F0A500;
+  text-shadow: .1rem .1rem .5rem white;
+}
+.wlcm {
+  text-align: center;
+  font-size: 25.5vw;
+  color: white;
+  font-size: 3.8rem;
+  font-weight: 500;
+  letter-spacing: .2rem;
+  text-shadow: .1rem .1rem .5rem #F0A500;
+  padding: 0 20px;
+}
+.content p{
+  font-size:2.5vh;
+  display: inline-block;
+  color: white;
+  text-shadow: .1rem .1rem .2rem black;
+  text-align: center;
+  margin: 20px 0 30px;
+}
+
+
 
   #happy-work{
     display:block;
