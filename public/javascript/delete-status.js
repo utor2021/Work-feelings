@@ -1,15 +1,16 @@
 async function deleteFormHandler(event) {
     event.preventDefault();
-
-    const id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-    ];
+    // debugger;
+    // grab event.target.id, user get attribute
+    console.log(event.target.id)
+    const id = event.target.id;
+    // var id = document.querySelector(".delete-post-btn");
     const response = await fetch(`/api/status/${id}`, {
         method: 'DELETE'
     });
 
     if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.replace('/checkin/dashboard');
     } else {
         alert(response.statusText);
     }

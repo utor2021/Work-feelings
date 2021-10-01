@@ -16,20 +16,40 @@
         <div class="container">
             <div class="row">
                 {{#each status}}
-                <form class="edit-post-form" action="api/status/{{id}}" method="post">
-                    <div class="col-sm-12 col-lg-6 border border-dark">
-                        <input type="text" name="emoji" value="{{emoji}}">
-                        <input type="text" name="diary" value="{{diary}}">
-                        <div>
-                            <img class="emoji" src="/images/emojis/{{emoji}}Capture.PNG">
-                            <h6 class="created_at">{{format_date created_at}}</h6>
-                        </div>
+                <div class="col-sm-12 col-lg-6 border border-dark">
+                    <h5>{{diary}}</h5>
+                    <div>
+                        <img class="emoji" src="/images/emojis/{{emoji}}Capture.PNG">
+                        <h6 class="created_at">{{format_date created_at}}</h6>
                     </div>
-                    <button type="submit">Save post</button>
-                    <button type="button" class="delete-post-btn">Delete post</button>
-                </form>
+                    <div class="delete-post-btn" id="{{id}}"><i class="fas fa-trash-alt"></i></div>
+                </div>
+
                 {{/each}}
             </div>
         </div>
     </div>
 </div>
+{{!--
+<div class="container">
+    <div class="row">
+        {{#each status}}
+        <form class="edit-post-form" action="api/status/{{id}}" method="post">
+            <div class="col-sm-12 col-lg-6 border border-dark">
+                <input type="text" name="emoji" value="{{emoji}}">
+                <input type="text" name="diary" value="{{diary}}">
+                <div>
+                    <img class="emoji" src="/images/emojis/{{emoji}}Capture.PNG">
+                    <h6 class="created_at">{{format_date created_at}}</h6>
+                </div>
+            </div>
+            <button type="submit">Save post</button>
+            <button type="button" class="delete-post-btn">Delete post</button>
+        </form>
+        {{/each}}
+    </div>
+</div>
+</div>
+</div> --}}
+
+<script src="/javascript/delete-status.js"></script>
