@@ -77,3 +77,8 @@ html {
 .created_at{
   float:right
 }
+
+.status-text {
+  border: none;
+  background-color: transparent;
+}
