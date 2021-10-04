@@ -52,22 +52,14 @@ function editEmojiHandler(event) {
     });
 }
 
-// function editEmojiHandler(event) {
-//     const emojiParent = event.target.parentElement;
-//     const emojiOptions = emojiParent.nextElementSibling;
-//     console.log(emojiOptions);
+let emojiPosts = document.querySelectorAll(".edit-post-form")
 
-//     var emojiChoices = function (event) {
-//         emojiOptions.removeAttribute("hidden");
-//         // var attribute = this.getAttribute("data-myattribute");
-//         // alert(attribute);
-//     };
+for (let i = 0; i < emojiPosts.length; i++) {
+    emojiPosts[i].addEventListener("click", editFormHandler);
+}
 
-//     for (var i = 0; i < emojiOptions.length; i++) {
-//         emojiOptions[i].addEventListener('click', emojiChoices, false);
-//     }
-// }
+let emojiPacks = document.querySelectorAll(".edit-emoji-selection");
 
-
-document.querySelector('.edit-post-form').addEventListener('click', editFormHandler);
-document.querySelector('.edit-emoji-selection').addEventListener('click', editEmojiHandler);
+for (let i = 0; i < emojiPacks.length; i++) {
+    emojiPacks[i].addEventListener("click", editEmojiHandler);
+}
