@@ -70,6 +70,10 @@ html {
  float: left;
 }
 
+.emoji-options img {
+  width: 30px;
+}
+
 .border{
   padding:20px
 }
@@ -81,4 +85,5 @@ html {
 .status-text {
   border: none;
   background-color: transparent;
+  width: 100%;
 }
