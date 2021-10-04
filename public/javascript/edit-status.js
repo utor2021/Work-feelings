@@ -3,13 +3,18 @@ async function editFormHandler(event) {
     console.log(event.target);
     const id = event.target.id;
     const diaryEl = document.querySelector("#diary" + id).value;
-    const emojiEl = document.querySelector(".emoji-options").value;
+    let parent = event.target.closest("div.border");
+    console.log(parent);
+    // Get the selected emoji inside the same parent div
+    let emojiElement = parent.querySelector(".ui-selected");
+    // read the id of the emoji element
+    let emoji = emojiElement.id;
 
     const response = await fetch(`/api/status/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
             diary: diaryEl,
-            emoji: emojiEl
+            emoji: emoji
         }),
         headers: {
             'Content-Type': 'application/json'
