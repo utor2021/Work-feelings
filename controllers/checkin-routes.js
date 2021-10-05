@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Department, User, Status } = require('../models');
-// const withAuth = require('../utils/auth');
 
 
 router.get('/', (req, res) => {
@@ -18,7 +17,7 @@ router.get('/dashboard', (req, res) => {
             'id',
             'emoji',
             'diary',
-            'created_at',
+            'created_at'
         ],
         order: [['created_at', 'DESC']],
         include: [
@@ -64,44 +63,6 @@ router.get('/dashboard', (req, res) => {
         });
 
 });
-
-// router.get('/tview', (req, res) => {
-//     Department.findOne({
-//         where: {
-//             id: req.session.department_id
-//         },
-//         attributes: [
-//             'id',
-//             'name'
-//         ],
-//         include: [
-//             {
-//                 model: User,
-//                 attributes: ['first_name', 'last_name'],
-//                 include: [
-//                     {
-//                         model: Status,
-//                         attributes: [
-//                             'id',
-//                             'emoji',
-//                             'diary',
-//                             'created_at',],
-//                         order: [['created_at', 'DESC']],
-//                     }
-//                 ]
-//             }
-//         ]
-//     })
-//         .then(dbDepartmentData => {
-//             // serialize data before passing to template
-//             const department = dbDepartmentData.map(status => status.get({ plain: true }));
-//             res.render('tview', { department, title: 'View Your Team', loggedIn: true });
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
 
 
 router.get('/tview', (req, res) => {

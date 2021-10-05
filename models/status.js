@@ -35,10 +35,6 @@ Status.init(
 
     }
   },
-  // date:{
-  //   type: DataTypes.DATE,
-  //   allowNull: false
-  // },
   {
     sequelize,
     timestamps: true,
