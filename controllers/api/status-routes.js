@@ -76,8 +76,20 @@ router.post('/', (req, res) => {
     Status.create({
         emoji: req.body.emoji,
         diary: req.body.diary,
-        // use body for API route testing
-        // user_id: req.body.user_id
+        user_id: req.session.user_id
+    })
+        .then(dbStatusData => res.json(dbStatusData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+// FIX THIS OR DELETE
+router.post('/:id', (req, res) => {
+    Status.create({
+        emoji: req.body.emoji,
+        diary: req.body.diary,
         user_id: req.session.user_id
     })
         .then(dbStatusData => res.json(dbStatusData))
@@ -91,7 +103,7 @@ router.put('/:id', (req, res) => {
     Status.update(
         {
             emoji: req.body.emoji,
-            diary:req.body.diary
+            diary: req.body.diary
         },
         {
             where: {

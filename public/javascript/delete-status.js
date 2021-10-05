@@ -1,18 +1,21 @@
 async function deleteFormHandler(event) {
     event.preventDefault();
 
-    const id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-    ];
+    const id = event.target.id;
+    // var id = document.querySelector(".delete-post-btn");
     const response = await fetch(`/api/status/${id}`, {
         method: 'DELETE'
     });
 
     if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.replace('/checkin/dashboard');
     } else {
         alert(response.statusText);
     }
 }
 
-document.querySelector('.delete-post-btn').addEventListener('click', deleteFormHandler);
+let deletePosts = document.querySelectorAll(".delete-post-btn")
+
+for (let i = 0; i < deletePosts.length; i++) {
+    deletePosts[i].addEventListener("click", deleteFormHandler);
+}

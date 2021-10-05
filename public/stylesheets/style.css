@@ -218,6 +218,10 @@ p{
   float: left;
 }
 
+.emoji-options img {
+  width: 30px;
+}
+
 .border{
   padding:20px
 }
@@ -225,6 +229,12 @@ p{
 .created_at{
   float:right
 }
+
+
+.status-text {
+  border: none;
+  background-color: transparent;
+  width: 100%;
 
 .loim{
   background: url("/images/sm5.jpg") no-repeat center center/cover;

@@ -14,7 +14,7 @@ $(function () {
 async function newFormHandler(event) {
     event.preventDefault();
     const diary = document.querySelector('textarea[name="diary"]').value.trim();
-    // const post_url = document.querySelector('input[name="post-url"]').value;
+
     console.log('emoji', emoji, "diary",diary)
     const response = await fetch(`/api/status`, {
         method: 'POST',

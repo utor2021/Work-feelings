@@ -17,14 +17,22 @@
             <div class="row">
                 {{#each status}}
                 <div class="col-sm-12 col-lg-6 border border-dark">
-                    <h5>{{diary}}</h5>
+                    <textarea cols="55" rows="5" class="status-text" id="diary{{id}}">{{diary}}</textarea>
                     <div>
-                        <img class="emoji" src="/images/emojis/{{emoji}}Capture.PNG"> 
-                        <h6 class= "created_at">{{format_date created_at}}</h6>
+                        <img class="emoji edit-emoji-selection" src="/images/emojis/{{emoji}}Capture.PNG">
+                        <h6 class="created_at">{{format_date created_at}}</h6>
                     </div>
+                    <div class="emoji-options" hidden>{{> emoji}}</div>
+                    <div class="edit-post-form"><i class="fa fa-save" id="{{id}}"></i></div>
+                    <div class="delete-post-btn"><i class="fas fa-trash-alt" id="{{id}}"></i></div>
                 </div>
                 {{/each}}
             </div>
         </div>
     </div>
 </div>
+
+<script src="/javascript/delete-status.js"></script>
+<script src="/javascript/edit-status.js"></script>
+{{!--
+<script src="/javascript/add-status.js"></script> --}}

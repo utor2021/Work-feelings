@@ -1,25 +1,70 @@
 async function editFormHandler(event) {
-    event.preventDefault();
 
-    const title = document.querySelector('input[name="post-title"]').value.trim();
-    const id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-    ];
+    console.log(event.target);
+    const id = event.target.id;
+    const diaryEl = document.querySelector("#diary" + id).value;
+    let parent = event.target.closest("div.border");
+    console.log(parent);
+    // Get the selected emoji inside the same parent div
+    let emojiElement = parent.querySelector(".ui-selected");
+    // read the id of the emoji element
+    let emoji = emojiElement.id;
+
     const response = await fetch(`/api/status/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
-            title
+            diary: diaryEl,
+            emoji: emoji
         }),
         headers: {
             'Content-Type': 'application/json'
         }
     });
-
+    console.log(response);
     if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.replace('/checkin/dashboard');
     } else {
         alert(response.statusText);
     }
 }
 
-document.querySelector('.edit-post-form').addEventListener('submit', editFormHandler);
+function editEmojiHandler(event) {
+    const emojiParent = event.target.parentElement;
+    var emojiOptions = emojiParent.nextElementSibling;
+    emojiOptions.removeAttribute("hidden");
+
+    // var myFunction = function () {
+    //     var selectableEmojis = this.getElementsByClassName("selectable");
+    //     console.log('selectable emojis', selectableEmojis);
+    // };
+
+    // for (var i = 0; i < emojiOptions.length; i++) {
+    //     emojiOptions[i].addEventListener('click', myFunction, false);
+    // }
+
+    let emoji;
+    $(function () {
+        $(".selectable").selectable({
+            // selected: function () {
+            //     $(".selectable img").each(function (index) {
+            //         if ($(this).hasClass("ui-selected")) {
+            //             emoji = $(this).attr("id");
+            //             console.log(emoji);
+            //         }
+            //     });
+            // }
+        });
+    });
+}
+
+let emojiPosts = document.querySelectorAll(".edit-post-form")
+
+for (let i = 0; i < emojiPosts.length; i++) {
+    emojiPosts[i].addEventListener("click", editFormHandler);
+}
+
+let emojiPacks = document.querySelectorAll(".edit-emoji-selection");
+
+for (let i = 0; i < emojiPacks.length; i++) {
+    emojiPacks[i].addEventListener("click", editEmojiHandler);
+}

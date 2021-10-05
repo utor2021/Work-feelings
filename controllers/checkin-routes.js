@@ -47,15 +47,16 @@ router.get('/dashboard', (req, res) => {
                 ],
                 group: ['emoji']
             })
-            .then(dbEmojiData => {
-                const emojiData = dbEmojiData.map(emojiCount => emojiCount.get({ plain: true }));
-                console.log(emojiData);
-                res.render('dashboard', { status, emojiData, title: 'Dashboard', loggedIn: true });
-            })
-            .catch(err => {
-                console.log(err);
-                res.status(500).json(err);
-            });
+                .then(dbEmojiData => {
+                    const emojiData = dbEmojiData.map(emojiCount => emojiCount.get({ plain: true }));
+                    console.log(emojiData);
+                    console.log(status);
+                    res.render('dashboard', { status, emojiData, title: 'Dashboard', loggedIn: true });
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.status(500).json(err);
+                });
         })
         .catch(err => {
             console.log(err);
