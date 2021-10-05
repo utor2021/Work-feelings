@@ -23,8 +23,11 @@
                         <h6 class="created_at">{{format_date created_at}}</h6>
                     </div>
                     <div class="emoji-options" hidden>{{> emoji}}</div>
-                    <div class="edit-post-form"><i class="fa fa-save" id="{{id}}"></i></div>
-                    <div class="delete-post-btn"><i class="fas fa-trash-alt" id="{{id}}"></i></div>
+                    <div id="dlt-save-icons">
+                        <div class="edit-post-form"><i class="fa fa-save" id="{{id}}"></i></div>
+                        <div class="delete-post-btn"><i class="fas fa-trash-alt" id="{{id}}"></i></div>
+                    </div>
+
                 </div>
                 {{/each}}
             </div>
@@ -34,5 +37,3 @@
 
 <script src="/javascript/delete-status.js"></script>
 <script src="/javascript/edit-status.js"></script>
-{{!--
-<script src="/javascript/add-status.js"></script> --}}

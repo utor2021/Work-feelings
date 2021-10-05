@@ -235,6 +235,7 @@ p{
   border: none;
   background-color: transparent;
   width: 100%;
+}
 
 .loim{
   background: url("/images/sm5.jpg") no-repeat center center/cover;
@@ -262,3 +263,13 @@ label{
     height: 230px;
   }
 }
+
+#dlt-save-icons{
+  float:right
+}
+
+.edit-post-form, .delete-post-btn{
+  width:40px;
+  float:right
+}
+

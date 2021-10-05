@@ -2,7 +2,6 @@ async function deleteFormHandler(event) {
     event.preventDefault();
 
     const id = event.target.id;
-    // var id = document.querySelector(".delete-post-btn");
     const response = await fetch(`/api/status/${id}`, {
         method: 'DELETE'
     });

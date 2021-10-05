@@ -1,7 +1,5 @@
 const router = require('express').Router();
-// const sequelize = require('../../config/connection');
 const { User, Status, Department } = require('../../models');
-// const withAuth = require('../../utils/auth');
 
 // get all status
 router.get('/', (req, res) => {
@@ -85,7 +83,7 @@ router.post('/', (req, res) => {
         });
 });
 
-// FIX THIS OR DELETE
+
 router.post('/:id', (req, res) => {
     Status.create({
         emoji: req.body.emoji,

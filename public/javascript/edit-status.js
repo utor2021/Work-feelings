@@ -33,26 +33,9 @@ function editEmojiHandler(event) {
     var emojiOptions = emojiParent.nextElementSibling;
     emojiOptions.removeAttribute("hidden");
 
-    // var myFunction = function () {
-    //     var selectableEmojis = this.getElementsByClassName("selectable");
-    //     console.log('selectable emojis', selectableEmojis);
-    // };
-
-    // for (var i = 0; i < emojiOptions.length; i++) {
-    //     emojiOptions[i].addEventListener('click', myFunction, false);
-    // }
-
     let emoji;
     $(function () {
         $(".selectable").selectable({
-            // selected: function () {
-            //     $(".selectable img").each(function (index) {
-            //         if ($(this).hasClass("ui-selected")) {
-            //             emoji = $(this).attr("id");
-            //             console.log(emoji);
-            //         }
-            //     });
-            // }
         });
     });
 }

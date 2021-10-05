@@ -1,6 +1,4 @@
 const router = require('express').Router();
-// const sequelize = require('../config/connection');
-// const { Department, User, Status } = require('../models');
 
 // render homepage if not logged in, redirect to checkin if logged in
 router.get('/', (req, res) => {
